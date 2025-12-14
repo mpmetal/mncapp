@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+<head>
+    
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="theme-color" content="#FF6B35"/>
+    <meta name="description" content="MNCApp - Transformamos ideas en aplicaciones y soluciones digitales"/>
+    <meta name="keywords" content="desarrollo de apps, desarrollo web, marketing digital, República Dominicana, aplicaciones móviles">
+    <meta name="author" content="MNCApp">
+    <title>MNCApp - Soluciones Digitales | Desarrollo de Apps y Web</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://customer-assets.emergentagent.com/job_tech-services-7/artifacts/du9kyqo1_logo-mnc-250-79.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="MNCApp - Soluciones Digitales">
+    <meta property="og:description" content="Transformamos ideas en aplicaciones y soluciones digitales">
+    <meta property="og:image" content="https://customer-assets.emergentagent.com/job_tech-services-7/artifacts/du9kyqo1_logo-mnc-250-79.png">
+    <meta property="og:url" content="https://mncapp.com">
+    <meta property="og:type" content="website">
+</head>
+<body class="bg-white">
+    <!-- Main Landing Page -->
+    <div id="mncapp-landing" class="min-h-screen bg-white">
+        <!-- Header -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="https://customer-assets.emergentagent.com/job_tech-services-7/artifacts/du9kyqo1_logo-mnc-250-79.png" alt="MNC Logo" class="h-12 w-auto">
+                </div>
+                <button onclick="scrollToContact()" class="bg-[#FF6B35] hover:bg-[#E55A2B] text-white font-medium px-6 py-2 rounded transition-all duration-300 transform hover:scale-105">
+                    Contáctanos
+                    <span class="ml-2">→</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="py-20 px-4 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-50 to-white"></div>
+            <div class="container mx-auto relative z-10">
+                <div class="max-w-4xl mx-auto animate-fade-in-up">
+                    <h1 class="text-5xl md:text-6xl font-bold text-black mb-6 leading-tight">
+                        Transformamos ideas en
+                        <span class="text-[#FF6B35] block">aplicaciones y soluciones digitales</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                        Somos MNCApp, tu socio tecnológico para llevar tu negocio al siguiente nivel con soluciones digitales innovadoras.
+                    </p>
+                    <button onclick="scrollToContacto()" class="bg-[#FF6B35] hover:bg-[#E55A2B] text-white text-lg px-8 py-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                        Empezar ahora
+                        <span class="ml-2">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-20 px-4 bg-gray-50">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-black mb-4">
+                        Nuestros Servicios
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Ofrecemos soluciones completas para digitalizar y potenciar tu empresa
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <!-- Servicio 1: Aplicaciones Móviles -->
+                    <div class="service-card overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-0 bg-white rounded-lg">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop&crop=center" alt="Aplicaciones Móviles" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-white p-3 rounded-full shadow-lg">
+                                <i data-lucide="smartphone" class="h-6 w-6 text-[#FF6B35]"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-black group-hover:text-[#FF6B35] transition-colors duration-300 mb-3">
+                                Desarrollo de Aplicaciones Móviles
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Creamos apps innovadoras como iLottery y Menús Digitales que transforman la experiencia de tus usuarios.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 2: Marketing Digital -->
+                    <div class="service-card overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-0 bg-white rounded-lg">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&crop=center" alt="Marketing Digital" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-white p-3 rounded-full shadow-lg">
+                                <i data-lucide="megaphone" class="h-6 w-6 text-[#FF6B35]"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-black group-hover:text-[#FF6B35] transition-colors duration-300 mb-3">
+                                Marketing Digital
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Estrategias en redes sociales, campañas publicitarias efectivas y diseño de contenidos que conectan con tu audiencia.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 3: Desarrollo Web -->
+                    <div class="service-card overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-0 bg-white rounded-lg">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop&crop=center" alt="Desarrollo Web" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-white p-3 rounded-full shadow-lg">
+                                <i data-lucide="globe" class="h-6 w-6 text-[#FF6B35]"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-black group-hover:text-[#FF6B35] transition-colors duration-300 mb-3">
+                                Desarrollo Web
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Páginas web con catálogos integrados, chat en tiempo real y formularios inteligentes para potenciar tu negocio.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 4: Asesoramiento Tecnológico -->
+                    <div class="service-card overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-0 bg-white rounded-lg">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center" alt="Asesoramiento Tecnológico" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-white p-3 rounded-full shadow-lg">
+                                <i data-lucide="settings" class="h-6 w-6 text-[#FF6B35]"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-black group-hover:text-[#FF6B35] transition-colors duration-300 mb-3">
+                                Asesoramiento Tecnológico
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Consultoría especializada en software y herramientas digitales para optimizar tus procesos empresariales.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="py-20 px-4 bg-white">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-black mb-4">
+                        ¿Listo para comenzar?
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Cuéntanos sobre tu proyecto y te ayudaremos a hacerlo realidad
+                    </p>
+                </div>
+    
+                <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Contact Form -->
+                    <div class="bg-white shadow-lg rounded-lg p-8">
+                        <h3 class="text-2xl font-bold text-black mb-2">Envíanos un mensaje</h3>
+                        <p class="text-gray-600 mb-6">Completa el formulario y nos pondremos en contacto contigo</p>
+                        
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium text-black mb-2">Nombre completo</label>
+                                <input 
+                                    id="nombre" 
+                                    name="nombre" 
+                                    type="text" 
+                                    required 
+                                    minlength="2"
+                                    maxlength="100"
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:border-[#FF6B35] focus:ring-2 focus:ring-[#FF6B35] focus:ring-opacity-20 transition-colors duration-300" 
+                                    placeholder="Tu nombre"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="correo" class="block text-sm font-medium text-black mb-2">Correo electrónico</label>
+                                <input 
+                                    id="correo" 
+                                    name="correo" 
+                                    type="email" 
+                                    required 
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:border-[#FF6B35] focus:ring-2 focus:ring-[#FF6B35] focus:ring-opacity-20 transition-colors duration-300" 
+                                    placeholder="tu@correo.com"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="mensaje" class="block text-sm font-medium text-black mb-2">Mensaje</label>
+                                <textarea 
+                                    id="mensaje" 
+                                    name="mensaje" 
+                                    required 
+                                    minlength="10"
+                                    maxlength="2000"
+                                    rows="4" 
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:border-[#FF6B35] focus:ring-2 focus:ring-[#FF6B35] focus:ring-opacity-20 resize-none transition-colors duration-300" 
+                                    placeholder="Cuéntanos sobre tu proyecto..."
+                                ></textarea>
+                            </div>
+                            
+                            <!-- Honeypot field (hidden from users, but bots will fill it) -->
+                            <input 
+                                type="text" 
+                                name="website" 
+                                id="website" 
+                                style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+                                tabindex="-1"
+                                autocomplete="off"
+                            >
+                            
+                            <!-- Hidden timestamp field -->
+                            <input type="hidden" id="timestamp_field" name="timestamp_field">
+                            
+                            <button 
+                                type="submit" 
+                                id="submitButton" 
+                                class="w-full bg-[#FF6B35] hover:bg-[#E55A2B] text-white font-medium py-3 rounded-md transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg"
+                            >
+                                <span class="submit-text">Enviar mensaje</span>
+                                <span class="submit-arrow ml-2">→</span>
+                            </button>
+                            
+                            <p class="text-xs text-gray-500 text-center mt-2">
+                                Este sitio está protegido por reCAPTCHA y se aplican la 
+                                <a href="https://policies.google.com/privacy" target="_blank" class="text-[#FF6B35] hover:underline">Política de privacidad</a> 
+                                y los 
+                                <a href="https://policies.google.com/terms" target="_blank" class="text-[#FF6B35] hover:underline">Términos de servicio</a> 
+                                de Google.
+                            </p>
+                        </form>
+    
+                        <!-- Success Message -->
+                        <div id="successMessage" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-md">
+                            <p class="text-green-800 font-medium">✓ ¡Mensaje enviado correctamente!</p>
+                            <p class="text-green-700 text-sm mt-1">Te contactaremos pronto.</p>
+                        </div>
+                        
+                        <!-- Error Message -->
+                        <div id="errorMessage" class="hidden mt-4 p-4 bg-red-50 border border-red-200 rounded-md">
+                            <p class="text-red-800 font-medium">✗ Error al enviar el mensaje</p>
+                            <p class="text-red-700 text-sm mt-1" id="errorText">Por favor, intenta de nuevo.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-[#FF6B35] p-3 rounded-full">
+                                    <i data-lucide="mail" class="h-6 w-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-black mb-2">Email</h3>
+                                    <a href="mailto:info@mncapp.com" class="text-gray-600 hover:text-[#FF6B35] transition-colors duration-300">info@mncapp.com</a>
+                                    <p class="text-sm text-gray-500 mt-1">Respuesta en menos de 24 horas</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-[#FF6B35] p-3 rounded-full">
+                                    <i data-lucide="message-circle" class="h-6 w-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-black mb-2">WhatsApp</h3>
+                                    <p class="text-gray-600">809-939-6422</p>
+                                    <p class="text-sm text-gray-500 mt-1">Disponible de 9:00 AM - 6:00 PM</p>
+                                    <button 
+                                        onclick="openWhatsApp()" 
+                                        class="mt-3 bg-green-600 hover:bg-green-700 text-white text-sm px-4 py-2 rounded transition-colors duration-300"
+                                    >
+                                        Abrir WhatsApp
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="bg-gradient-to-r from-orange-50 to-white p-8 rounded-lg border">
+                            <h3 class="font-bold text-xl text-black mb-4">
+                                ¿Por qué elegir MNCApp?
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle" class="h-5 w-5 text-[#FF6B35]"></i>
+                                    <span class="text-gray-700">Experiencia comprobada</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle" class="h-5 w-5 text-[#FF6B35]"></i>
+                                    <span class="text-gray-700">Soluciones personalizadas</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle" class="h-5 w-5 text-[#FF6B35]"></i>
+                                    <span class="text-gray-700">Soporte técnico 24/7</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle" class="h-5 w-5 text-[#FF6B35]"></i>
+                                    <span class="text-gray-700">Entrega puntual</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <script src="https://www.google.com/recaptcha/api.js?render=6LeCrgIsAAAAACWIGrEeRYa6tZFUnRHlPQZ9_r4V"></script>
+        <script src="mncapp_standalone.js"></script>    
+        
+
+</body>
+</html>

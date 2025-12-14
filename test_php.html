@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test de Conexión PHP - MNCApp</title>
+</head>
+<body>
+    <h2>Test de Funcionamiento del Servidor</h2>
+    
+    <div id="results" style="margin: 20px 0; padding: 10px; border: 1px solid #ccc;"></div>
+    
+    <button onclick="testPHP()" style="background: #FF6B35; color: white; padding: 10px 20px; border: none; cursor: pointer;">
+        Probar Conexión PHP
+    </button>
+    
+    <script>
+    async function testPHP() {
+        const results = document.getElementById('results');
+        results.innerHTML = 'Probando...';
+        
+        try {
+            // Test 1: Ver si el archivo PHP existe
+            const response = await fetch('contact.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    nombre: 'Test',
+                    correo: 'test@test.com', 
+                    mensaje: 'Mensaje de prueba'
+                })
+            });
+            
+            results.innerHTML = `
+                <strong>Estado de respuesta:</strong> ${response.status}<br>
+                <strong>Tipo de contenido:</strong> ${response.headers.get('content-type')}<br>
+                <strong>Respuesta:</strong> ${await response.text()}
+            `;
+            
+        } catch (error) {
+            results.innerHTML = `
+                <strong style="color: red;">ERROR:</strong> ${error.message}<br>
+                <strong>Posibles causas:</strong><br>
+                - PHP no está activado en tu hosting<br>
+                - El archivo contact.php no se subió correctamente<br>
+                - Problema de permisos de archivo<br>
+                - CORS bloqueado por el servidor
+            `;
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+[
+    {
+        "type": "legitimate",
+        "ip": "148.255.98.219",
+        "nombre": "Emerget",
+        "correo": "mpmetal@gmail.com",
+        "spam_score": 0.1000000000000000055511151231257827021181583404541015625,
+        "email_sent": true,
+        "timestamp": "2025-11-04 20:39:28"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "89.110.115.121",
+        "nombre": "abjRZvlXDPoAnIyzgX",
+        "correo": "nora_gonzalez@live.com",
+        "timestamp": "2025-11-04 21:57:08"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "195.2.70.209",
+        "nombre": "EznYCOmhABVnhIVQQR",
+        "correo": "zjsense@verizon.net",
+        "timestamp": "2025-11-05 01:54:04"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "80.85.246.214",
+        "nombre": "gTMQQnXAxlBdMMJVwTy",
+        "correo": "mon_pacina@yahoo.com",
+        "timestamp": "2025-11-05 02:53:21"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "80.85.246.71",
+        "nombre": "woeWKgrqEhTDxqdxif",
+        "correo": "mslodi08@aol.com",
+        "timestamp": "2025-11-05 09:40:35"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "195.26.224.235",
+        "nombre": "XzWNRmSuNyvyvBdUbENLom",
+        "correo": "mposey@poseyifs.com",
+        "timestamp": "2025-11-05 10:23:12"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "185.21.14.193",
+        "nombre": "hqWnTJDIeUIJBfiuPgAJ",
+        "correo": "patstefanek@earthlink.net",
+        "timestamp": "2025-11-05 18:31:40"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "94.103.93.19",
+        "nombre": "fCRPThPRPciWiHpUc",
+        "correo": "ninaeros@gmail.com",
+        "timestamp": "2025-11-05 19:46:20"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "80.85.245.145",
+        "nombre": "IMBWuQmTZFuqGEZC",
+        "correo": "tommydaw@gmail.com",
+        "timestamp": "2025-11-05 22:15:30"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "94.103.87.196",
+        "nombre": "rBuZxGTEFJSUcsTStmRV",
+        "correo": "fmamedov3@gmail.com",
+        "timestamp": "2025-11-06 02:21:50"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "89.110.80.171",
+        "nombre": "AEUfiJbKBOyRQzFCJZYZ",
+        "correo": "kaylarowan79@gmail.com",
+        "timestamp": "2025-11-06 04:02:53"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "212.34.153.180",
+        "nombre": "lmgHNPRPvvHYEWfEoJWfC",
+        "correo": "jessica.guevaralagos@gmail.com",
+        "timestamp": "2025-11-06 07:33:21"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "89.110.115.121",
+        "nombre": "rwJSYGiMajerYIIgxBcAVzZz",
+        "correo": "carmenja_1@hotmail.com",
+        "timestamp": "2025-11-06 09:46:42"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "80.85.246.217",
+        "nombre": "ZtkaqEYnIixOtmoXzrBy",
+        "correo": "abrueggmann@atkore.com",
+        "timestamp": "2025-11-06 10:46:59"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "212.34.135.52",
+        "nombre": "kczfVtbHbzeKsFSpH",
+        "correo": "pavel@tsarlink.com",
+        "timestamp": "2025-11-06 16:46:30"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "91.84.104.205",
+        "nombre": "DeQUfbHzEJIVGgGd",
+        "correo": "kmb41102@yahoo.com",
+        "timestamp": "2025-11-06 19:13:11"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "91.84.99.6",
+        "nombre": "FOyvtfIYygFvJQWYItr",
+        "correo": "oblongatta@yahoo.com",
+        "timestamp": "2025-11-07 01:20:31"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "91.246.41.166",
+        "nombre": "ttSkfVXHnjYmnTgMRJbSrc",
+        "correo": "mtang@frenchlyontang.com",
+        "timestamp": "2025-11-07 06:46:45"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "80.85.246.140",
+        "nombre": "jJDAfAVNVInJYEuNoUW",
+        "correo": "codyp1477@gmail.com",
+        "timestamp": "2025-11-07 08:31:50"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "185.21.14.193",
+        "nombre": "iexfUkgmRRXNnkOxlIH",
+        "correo": "bschmitz53@gmail.com",
+        "timestamp": "2025-11-07 09:34:16"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "80.85.246.144",
+        "nombre": "QJPNzJEtwuWsAKfEut",
+        "correo": "amanda.swanberg@fr.com",
+        "timestamp": "2025-11-07 11:03:48"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "212.34.140.200",
+        "nombre": "HATSyGkkJrsXaQIrk",
+        "correo": "sharron.a.arrington@piedmont.org",
+        "timestamp": "2025-11-07 13:10:37"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "80.85.246.71",
+        "nombre": "CJwcJERaTiJCURxm",
+        "correo": "hiroka_mm@ybb.ne.jp",
+        "timestamp": "2025-11-07 23:46:51"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "212.34.153.180",
+        "nombre": "WVTFwLrzCWBrMkszbx",
+        "correo": "kate.fenton@live.co.uk",
+        "timestamp": "2025-11-08 02:30:09"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "91.84.99.6",
+        "nombre": "kYVujndjHpIPfMDxA",
+        "correo": "jonathanandujar90@yahoo.com",
+        "timestamp": "2025-11-08 03:46:45"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "195.2.81.171",
+        "nombre": "FFGELAzYLxJMCoZhEe",
+        "correo": "solisoliviy2001@gmail.com",
+        "timestamp": "2025-11-08 04:33:19"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "195.2.70.209",
+        "nombre": "vnXESmCnAQHJHeWZpRt",
+        "correo": "adouglas99@gmail.com",
+        "timestamp": "2025-11-08 10:14:50"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "80.85.246.74",
+        "nombre": "UjmbTvPnMDZezEBECbw",
+        "correo": "vonnesia16@yahoo.com",
+        "timestamp": "2025-11-08 13:52:54"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "91.84.111.136",
+        "nombre": "LLZrPxItvTySjkSXzGhw",
+        "correo": "jasminebreanna1@gmail.com",
+        "timestamp": "2025-11-08 16:49:48"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "195.26.225.209",
+        "nombre": "ZoHUitKnQjAxYyoc",
+        "correo": "kaknelson@gmail.com",
+        "timestamp": "2025-11-09 04:32:26"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "80.85.246.71",
+        "nombre": "BVliVwWaRknwafPxDuU",
+        "correo": "miriamsztain@gmail.com",
+        "timestamp": "2025-11-09 10:41:21"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "94.103.88.24",
+        "nombre": "iKuYsSNKEHPvJgtvs",
+        "correo": "minh.hoang@gradedguard.us",
+        "timestamp": "2025-11-09 13:03:03"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "212.118.53.218",
+        "nombre": "JQtOqznORWGqlNzQ",
+        "correo": "marcus.palacios@aol.com",
+        "timestamp": "2025-11-09 18:47:31"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "212.34.140.200",
+        "nombre": "myPlLiONrZQXRPKPHu",
+        "correo": "claudia.k@hotmail.co.uk",
+        "timestamp": "2025-11-10 02:01:48"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "212.34.132.22",
+        "nombre": "GPZUHrwqcCYdHumpGouakt",
+        "correo": "cosireces737@gmail.com",
+        "timestamp": "2025-11-10 05:12:12"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "195.2.81.171",
+        "nombre": "XGxqikVRZGwRrKywctBc",
+        "correo": "epazubabuli061@gmail.com",
+        "timestamp": "2025-11-10 05:12:42"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "178.20.47.92",
+        "nombre": "AZojhvxojBMiBXlEI",
+        "correo": "hutujerese18@gmail.com",
+        "timestamp": "2025-11-14 11:21:18"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "89.110.115.121",
+        "nombre": "XlCfXROoxPmKvkCJYvujp",
+        "correo": "sikiqosaqu43@gmail.com",
+        "timestamp": "2025-11-17 19:16:23"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "91.84.110.151",
+        "nombre": "peSNHvrHVybXdWosPzv",
+        "correo": "acoruyenoje855@gmail.com",
+        "timestamp": "2025-11-20 15:04:00"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "88.210.11.43",
+        "nombre": "SEDAzbOKDaADylnxU",
+        "correo": "gimupapi59@gmail.com",
+        "timestamp": "2025-11-26 05:57:55"
+    },
+    {
+        "type": "spam_honeypot",
+        "ip": "195.200.26.27",
+        "nombre": "UnBfYUDuHmqvwszCmguZv",
+        "correo": "sejenimex999@gmail.com",
+        "timestamp": "2025-11-26 08:23:08"
+    }
+]

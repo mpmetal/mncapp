@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNCApp - Panel de Mensajes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900 mb-2">Panel de Mensajes</h1>
+                        <p class="text-gray-600">Mensajes recibidos desde el formulario de contacto</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button 
+                            onclick="toggleSpam()" 
+                            id="spamToggle"
+                            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors"
+                        >
+                            <i data-lucide="shield" class="h-4 w-4 inline mr-2"></i>
+                            <span id="spamToggleText">Mostrar spam</span>
+                        </button>
+                        <button 
+                            onclick="loadMessages()" 
+                            class="px-4 py-2 bg-[#FF6B35] text-white rounded-md hover:bg-[#E55A2B] transition-colors"
+                        >
+                            <i data-lucide="refresh-cw" class="h-4 w-4 inline mr-2"></i>
+                            Actualizar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Total Mensajes</p>
+                            <p class="text-3xl font-bold text-gray-900" id="totalCount">0</p>
+                        </div>
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <i data-lucide="mail" class="h-6 w-6 text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Mensajes Legítimos</p>
+                            <p class="text-3xl font-bold text-green-600" id="legitimateCount">0</p>
+                        </div>
+                        <div class="bg-green-100 p-3 rounded-full">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-green-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Spam Bloqueado</p>
+                            <p class="text-3xl font-bold text-red-600" id="spamCount">0</p>
+                        </div>
+                        <div class="bg-red-100 p-3 rounded-full">
+                            <i data-lucide="shield-alert" class="h-6 w-6 text-red-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div id="loading" class="bg-white rounded-lg shadow-md p-12 text-center">
+                <svg class="animate-spin h-8 w-8 text-[#FF6B35] mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <p class="text-gray-600">Cargando mensajes...</p>
+            </div>
+
+            <!-- Messages Container -->
+            <div id="messagesContainer" class="hidden space-y-4">
+                <!-- Messages will be inserted here -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="hidden bg-white rounded-lg shadow-md p-12 text-center">
+                <i data-lucide="inbox" class="h-16 w-16 text-gray-400 mx-auto mb-4"></i>
+                <p class="text-xl text-gray-600">No hay mensajes todavía</p>
+                <p class="text-gray-500 mt-2">Los mensajes aparecerán aquí cuando alguien complete el formulario</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="hidden bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+                <i data-lucide="alert-circle" class="h-12 w-12 text-red-600 mx-auto mb-4"></i>
+                <p class="text-lg text-red-800 font-medium">Error al cargar mensajes</p>
+                <p class="text-red-600 mt-2" id="errorText">Por favor, intenta de nuevo más tarde.</p>
+                <button 
+                    onclick="loadMessages()" 
+                    class="mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
+                >
+                    Reintentar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const BACKEND_URL = 'https://webmail-repair.preview.emergentagent.com/api';
+        let showSpam = false;
+        let allMessages = [];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            loadMessages();
+        });
+
+        // Load messages from backend
+        async function loadMessages() {
+            const loading = document.getElementById('loading');
+            const messagesContainer = document.getElementById('messagesContainer');
+            const emptyState = document.getElementById('emptyState');
+            const errorState = document.getElementById('errorState');
+
+            // Show loading
+            loading.classList.remove('hidden');
+            messagesContainer.classList.add('hidden');
+            emptyState.classList.add('hidden');
+            errorState.classList.add('hidden');
+
+            try {
+                const response = await fetch(`${BACKEND_URL}/contact/messages?include_spam=true&limit=100`);
+                
+                if (!response.ok) {
+                    throw new Error('Error al cargar mensajes');
+                }
+
+                allMessages = await response.json();
+                
+                // Update stats
+                updateStats(allMessages);
+                
+                // Display messages
+                displayMessages(allMessages);
+
+                loading.classList.add('hidden');
+                
+                if (allMessages.length === 0) {
+                    emptyState.classList.remove('hidden');
+                } else {
+                    messagesContainer.classList.remove('hidden');
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                loading.classList.add('hidden');
+                errorState.classList.remove('hidden');
+                document.getElementById('errorText').textContent = error.message;
+            }
+        }
+
+        // Update statistics
+        function updateStats(messages) {
+            const legitimate = messages.filter(m => !m.is_spam).length;
+            const spam = messages.filter(m => m.is_spam).length;
+
+            document.getElementById('totalCount').textContent = messages.length;
+            document.getElementById('legitimateCount').textContent = legitimate;
+            document.getElementById('spamCount').textContent = spam;
+        }
+
+        // Display messages
+        function displayMessages(messages) {
+            const container = document.getElementById('messagesContainer');
+            
+            // Filter based on spam toggle
+            const filteredMessages = showSpam ? messages : messages.filter(m => !m.is_spam);
+
+            if (filteredMessages.length === 0) {
+                container.innerHTML = `
+                    <div class="bg-white rounded-lg shadow-md p-8 text-center">
+                        <p class="text-gray-600">No hay mensajes ${showSpam ? 'de spam' : 'legítimos'}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filteredMessages.map(message => {
+                const date = new Date(message.timestamp);
+                const isSpam = message.is_spam;
+                const spamScore = (message.spam_score * 100).toFixed(0);
+
+                return `
+                    <div class="bg-white rounded-lg shadow-md p-6 ${isSpam ? 'border-l-4 border-red-500' : 'border-l-4 border-green-500'}">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex-1">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <h3 class="text-lg font-bold text-gray-900">${escapeHtml(message.nombre)}</h3>
+                                    ${isSpam ? 
+                                        `<span class="px-2 py-1 bg-red-100 text-red-800 text-xs font-medium rounded">SPAM (${spamScore}%)</span>` :
+                                        `<span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">LEGÍTIMO</span>`
+                                    }
+                                </div>
+                                <a href="mailto:${message.correo}" class="text-[#FF6B35] hover:underline text-sm">
+                                    ${escapeHtml(message.correo)}
+                                </a>
+                            </div>
+                            <div class="text-right text-sm text-gray-500">
+                                <p>${date.toLocaleDateString('es-ES')}</p>
+                                <p>${date.toLocaleTimeString('es-ES')}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-md p-4 mb-3">
+                            <p class="text-gray-800 whitespace-pre-wrap">${escapeHtml(message.mensaje)}</p>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <div class="flex items-center space-x-4">
+                                <span title="Dirección IP">
+                                    <i data-lucide="map-pin" class="h-3 w-3 inline"></i>
+                                    ${message.ip_address || 'N/A'}
+                                </span>
+                                <span title="ID del mensaje" class="font-mono">
+                                    ID: ${message.id.substring(0, 8)}
+                                </span>
+                            </div>
+                            <a href="mailto:${message.correo}?subject=Re: Tu mensaje en MNCApp" 
+                               class="px-3 py-1 bg-[#FF6B35] text-white rounded hover:bg-[#E55A2B] transition-colors">
+                                Responder
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Re-initialize icons
+            lucide.createIcons();
+        }
+
+        // Toggle spam visibility
+        function toggleSpam() {
+            showSpam = !showSpam;
+            const toggleText = document.getElementById('spamToggleText');
+            toggleText.textContent = showSpam ? 'Ocultar spam' : 'Mostrar spam';
+            displayMessages(allMessages);
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
